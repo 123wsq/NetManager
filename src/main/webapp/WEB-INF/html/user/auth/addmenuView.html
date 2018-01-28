@@ -1,0 +1,214 @@
+<meta charset="utf-8"/>
+<form class="form-horizontal" role="form" onsubmit="return pageSearch(this);"
+      action="auth/addMenu.do" method="post">
+    <br/>
+    <!--
+     * Input属性说明:
+     * validate="true"  是否需要验证字段
+     * msg="错误时提示信息"
+     * datatype="数据类型"
+    -->
+    <!-- #section:elements.form -->
+
+    <div class="form-group">
+
+
+        <label class="col-sm-2 control-label no-padding-right">
+            一级菜单： </label>
+        <div class="col-sm-1">
+			<span class="block input-icon input-icon-right">
+                      <select
+                              id="oneMenu"
+                              name='oneMenu'
+                              data-placeholder="请选择" style="width: 245px;vertical-align:middle;">
+	            	</select>
+        </div>
+
+    </div>
+
+    <div class="form-group">
+        <label class="col-sm-2 control-label no-padding-right">
+            二级菜单： </label>
+        <div class="col-sm-3">
+			<span class="block input-icon input-icon-right">
+                  <select
+                          id="twoMenu"
+                          name='twoMenu'
+                          data-placeholder="请选择" style="width: 245px;vertical-align:middle;">
+                </select>
+            </span>
+        </div>
+
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 control-label no-padding-right">
+            三级菜单： </label>
+        <div class="col-sm-3">
+			<span class="block input-icon input-icon-right">
+                  <select
+                          id="threeMenu"
+                          name='threeMenu'
+                          data-placeholder="请选择" style="width: 245px;vertical-align:middle;">
+                </select>
+            </span>
+        </div>
+
+    </div>
+
+    <div class="form-group">
+        <label class="col-sm-2 control-label no-padding-right">
+            菜单名称： </label>
+        <div class="col-sm-3">
+            <input type="text" id="menu_name" name="menu_name" placeholder=""
+                   class="col-xs-12 col-sm-12" value="" />
+        </div>
+
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 control-label no-padding-right">
+            菜单状态： </label>
+        <div class="col-sm-3">
+            <select
+                    name="menu_state"
+                    id="menu_state"
+                    data-placeholder="请选择" style="width: 186px;vertical-align:middle;" readonly="readonly">
+                <option value="0">可用</option>
+                <option value="1">不可用</option>
+            </select>
+        </div>
+
+
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 control-label no-padding-right">
+            菜单类型： </label>
+        <div class="col-sm-3">
+            <select
+                    name="menu_type"
+                    id="menu_type"
+                    data-placeholder="请选择" style="width: 186px;vertical-align:middle;" readonly="readonly">
+                <option value="0">菜单</option>
+                <option value="1">按钮</option>
+            </select>
+        </div>
+
+
+    </div>
+
+    <div class="form-group">
+
+
+        <label class="col-sm-2 control-label no-padding-right">
+            菜单地址： </label>
+        <div class="col-sm-3">
+            <input type="text" id="menu_url" name="menu_url" placeholder=""
+                   class="col-xs-12 col-sm-12" value="" readonly="readonly"/>
+        </div>
+
+    </div>
+
+    <div class="form-actions align-right  form-button-box" style="margin-top: 10px">
+        <button class="btn btn-info" type="submit">保存</button>
+
+        &nbsp;
+        <button class="btn" type="button" onclick="javascript:dialog.close(this);">
+            关闭
+        </button>
+    </div>
+
+</form>
+
+<script>
+
+    var dialog=$("#dlg-menuDialog").Dialog();
+
+
+    $(document).ready(function () {
+        getMenuLevel("00", 1)
+    });
+
+    function getMenuLevel(menuPreId, level){
+
+        $.ajax({
+            type: "get",
+            url: "auth/getAllMenu.do",
+            dataType: 'json',
+            data: {
+                parent_id: menuPreId,
+                menu_state: "0"
+            },
+            success: function (result) {
+
+                if (result.code == '200') {
+
+                    if (level ==1){
+
+                        $("#oneMenu").find("option").remove();
+                        $("#oneMenu").append("<option value=''>请选择</option>");
+                        $.each(result.rows, function(index, obj){
+                            $("#oneMenu").append("<option value='"+obj.menu_id+"'>"+obj.menu_name+"</option>");
+
+                        });
+                        getMenuLevel($("#oneMenu").val(), 2);
+                    }else if (level ==2){
+
+                        $("#twoMenu").find("option").remove();
+                        $("#twoMenu").append("<option value=''>请选择</option>");
+                        $.each(result.rows, function(index, obj){
+                            $("#twoMenu").append("<option value='"+obj.menu_id+"'>"+obj.menu_name+"</option>");
+
+                        });
+                        getMenuLevel($("#twoMenu").val(), 3);
+
+                    }else if (level ==3){
+
+                        $("#threeMenu").find("option").remove();
+                        $("#threeMenu").append("<option value=''>请选择</option>");
+                        $.each(result.rows, function(index, obj){
+                            $("#threeMenu").append("<option value='"+obj.menu_id+"'>"+obj.menu_name+"</option>");
+
+                        });
+                    }
+
+                }else{
+                    msg.alert("错误", result.msg, 'error');
+                }
+            }
+        });
+
+    }
+    
+    $("#oneMenu").change(function () {
+        getMenuLevel($("#oneMenu").val(), 2)
+    });
+    $("#twoMenu").change(function () {
+        getMenuLevel($("#twoMenu").val(), 3)
+    });
+
+    
+    function onAddnewMenu() {
+
+        var menuPreId = $("#oneMenu").val()+$("#twoMenu").val()+$("#threeMenu").val();
+        $.ajax({
+            type : "post",
+            url : "auth/addMenu.do",
+            dataType : 'json',
+            data:{
+                parent_id: menuPreId,
+                menu_name : $("#menuName1").val(),
+                menu_url : $("#menuUrl").val(),
+                menu_state: $("#menuState1").val()
+            },
+            success : function(result) {
+
+                if (result.code =='200') {
+                    dialog.closeById('dlg-menuDialog');
+                    msg.alert("成功", result.msg, 'success');
+                }else{
+                    msg.alert("错误", result.msg, 'error');
+                }
+            }
+        });
+    }
+   
+</script>

@@ -1,0 +1,108 @@
+Sep 13, 2016 9:05:51 AM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Server version:        Apache Tomcat/7.0.69
+Sep 13, 2016 9:05:51 AM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Server built:          Apr 11 2016 07:57:09 UTC
+Sep 13, 2016 9:05:51 AM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Server number:         7.0.69.0
+Sep 13, 2016 9:05:51 AM org.apache.catalina.startup.VersionLoggerListener log
+INFO: OS Name:               Linux
+Sep 13, 2016 9:05:51 AM org.apache.catalina.startup.VersionLoggerListener log
+INFO: OS Version:            3.11.0-15-generic
+Sep 13, 2016 9:05:51 AM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Architecture:          amd64
+Sep 13, 2016 9:05:51 AM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Java Home:             /usr/lib/jvm/java-7-openjdk-amd64/jre
+Sep 13, 2016 9:05:51 AM org.apache.catalina.startup.VersionLoggerListener log
+INFO: JVM Version:           1.7.0_101-b00
+Sep 13, 2016 9:05:51 AM org.apache.catalina.startup.VersionLoggerListener log
+INFO: JVM Vendor:            Oracle Corporation
+Sep 13, 2016 9:05:51 AM org.apache.catalina.startup.VersionLoggerListener log
+INFO: CATALINA_BASE:         /home/wsq/netManger/web-tomcat
+Sep 13, 2016 9:05:51 AM org.apache.catalina.startup.VersionLoggerListener log
+INFO: CATALINA_HOME:         /home/wsq/netManger/web-tomcat
+Sep 13, 2016 9:05:51 AM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Command line argument: -Djava.util.logging.config.file=/home/wsq/netManger/web-tomcat/conf/logging.properties
+Sep 13, 2016 9:05:51 AM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+Sep 13, 2016 9:05:51 AM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+Sep 13, 2016 9:05:51 AM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Command line argument: -Djava.endorsed.dirs=/home/wsq/netManger/web-tomcat/endorsed
+Sep 13, 2016 9:05:51 AM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Command line argument: -Dcatalina.base=/home/wsq/netManger/web-tomcat
+Sep 13, 2016 9:05:51 AM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Command line argument: -Dcatalina.home=/home/wsq/netManger/web-tomcat
+Sep 13, 2016 9:05:51 AM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Command line argument: -Djava.io.tmpdir=/home/wsq/netManger/web-tomcat/temp
+Sep 13, 2016 9:05:51 AM org.apache.catalina.core.AprLifecycleListener lifecycleEvent
+INFO: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: /usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib
+Sep 13, 2016 9:05:51 AM org.apache.coyote.AbstractProtocol init
+INFO: Initializing ProtocolHandler ["http-bio-8092"]
+Sep 13, 2016 9:05:51 AM org.apache.coyote.AbstractProtocol init
+INFO: Initializing ProtocolHandler ["ajp-bio-8009"]
+Sep 13, 2016 9:05:51 AM org.apache.catalina.startup.Catalina load
+INFO: Initialization processed in 1311 ms
+Sep 13, 2016 9:05:51 AM org.apache.catalina.core.StandardService startInternal
+INFO: Starting service Catalina
+Sep 13, 2016 9:05:51 AM org.apache.catalina.core.StandardEngine startInternal
+INFO: Starting Servlet Engine: Apache Tomcat/7.0.69
+Sep 13, 2016 9:05:51 AM org.apache.catalina.startup.HostConfig deployWAR
+INFO: Deploying web application archive /home/wsq/netManger/web-tomcat/webapps/NetManager.war
+Sep 13, 2016 9:05:51 AM org.apache.catalina.core.StandardContext postWorkDirectory
+WARNING: Failed to create work directory [/home/wsq/netManger/web-tomcat/work/Catalina/localhost/NetManager] for context [/NetManager]
+Sep 13, 2016 9:05:51 AM org.apache.catalina.loader.WebappClassLoaderBase validateJarFile
+INFO: validateJarFile(/home/wsq/netManger/web-tomcat/webapps/NetManager/WEB-INF/lib/javax.servlet-api-3.0.1.jar) - jar not loaded. See Servlet Spec 3.0, section 10.7.2. Offending class: javax/servlet/Servlet.class
+Sep 13, 2016 9:05:51 AM org.apache.catalina.loader.WebappClassLoaderBase validateJarFile
+INFO: validateJarFile(/home/wsq/netManger/web-tomcat/webapps/NetManager/WEB-INF/lib/servlet-api-3.0-alpha-1.jar) - jar not loaded. See Servlet Spec 3.0, section 10.7.2. Offending class: javax/servlet/Servlet.class
+Sep 13, 2016 9:05:57 AM org.apache.catalina.startup.TaglibUriRule body
+INFO: TLD skipped. URI: http://java.sun.com/jstl/core_rt is already defined
+Sep 13, 2016 9:05:57 AM org.apache.catalina.startup.TaglibUriRule body
+INFO: TLD skipped. URI: http://java.sun.com/jstl/core is already defined
+Sep 13, 2016 9:05:57 AM org.apache.catalina.startup.TaglibUriRule body
+INFO: TLD skipped. URI: http://java.sun.com/jsp/jstl/core is already defined
+Sep 13, 2016 9:05:57 AM org.apache.catalina.startup.TaglibUriRule body
+INFO: TLD skipped. URI: http://java.sun.com/jstl/fmt_rt is already defined
+Sep 13, 2016 9:05:57 AM org.apache.catalina.startup.TaglibUriRule body
+INFO: TLD skipped. URI: http://java.sun.com/jstl/fmt is already defined
+Sep 13, 2016 9:05:57 AM org.apache.catalina.startup.TaglibUriRule body
+INFO: TLD skipped. URI: http://java.sun.com/jsp/jstl/fmt is already defined
+Sep 13, 2016 9:05:57 AM org.apache.catalina.startup.TaglibUriRule body
+INFO: TLD skipped. URI: http://java.sun.com/jsp/jstl/functions is already defined
+Sep 13, 2016 9:05:57 AM org.apache.catalina.startup.TaglibUriRule body
+INFO: TLD skipped. URI: http://jakarta.apache.org/taglibs/standard/permittedTaglibs is already defined
+Sep 13, 2016 9:05:57 AM org.apache.catalina.startup.TaglibUriRule body
+INFO: TLD skipped. URI: http://jakarta.apache.org/taglibs/standard/scriptfree is already defined
+Sep 13, 2016 9:05:57 AM org.apache.catalina.startup.TaglibUriRule body
+INFO: TLD skipped. URI: http://java.sun.com/jstl/sql_rt is already defined
+Sep 13, 2016 9:05:57 AM org.apache.catalina.startup.TaglibUriRule body
+INFO: TLD skipped. URI: http://java.sun.com/jstl/sql is already defined
+Sep 13, 2016 9:05:57 AM org.apache.catalina.startup.TaglibUriRule body
+INFO: TLD skipped. URI: http://java.sun.com/jsp/jstl/sql is already defined
+Sep 13, 2016 9:05:57 AM org.apache.catalina.startup.TaglibUriRule body
+INFO: TLD skipped. URI: http://java.sun.com/jstl/xml_rt is already defined
+Sep 13, 2016 9:05:57 AM org.apache.catalina.startup.TaglibUriRule body
+INFO: TLD skipped. URI: http://java.sun.com/jstl/xml is already defined
+Sep 13, 2016 9:05:57 AM org.apache.catalina.startup.TaglibUriRule body
+INFO: TLD skipped. URI: http://java.sun.com/jsp/jstl/xml is already defined
+Sep 13, 2016 9:05:57 AM org.apache.catalina.startup.TldConfig execute
+INFO: At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+Sep 13, 2016 9:06:04 AM org.apache.catalina.core.StandardContext startInternal
+SEVERE: One or more listeners failed to start. Full details will be found in the appropriate container log file
+Sep 13, 2016 9:06:04 AM org.apache.catalina.core.StandardContext startInternal
+SEVERE: Context [/NetManager] startup failed due to previous errors
+Sep 13, 2016 9:06:04 AM org.apache.catalina.loader.WebappClassLoaderBase clearReferencesJdbc
+SEVERE: The web application [/NetManager] registered the JDBC driver [com.alibaba.druid.proxy.DruidDriver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+Sep 13, 2016 9:06:04 AM org.apache.catalina.loader.WebappClassLoaderBase clearReferencesJdbc
+SEVERE: The web application [/NetManager] registered the JDBC driver [com.mysql.jdbc.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+Sep 13, 2016 9:06:04 AM org.apache.catalina.loader.WebappClassLoaderBase clearReferencesThreads
+SEVERE: The web application [/NetManager] appears to have started a thread named [FileWatchdog] but has failed to stop it. This is very likely to create a memory leak.
+Sep 13, 2016 9:06:04 AM org.apache.catalina.loader.WebappClassLoaderBase clearReferencesThreads
+SEVERE: The web application [/NetManager] appears to have started a thread named [Abandoned connection cleanup thread] but has failed to stop it. This is very likely to create a memory leak.
+Sep 13, 2016 9:06:04 AM org.apache.catalina.startup.HostConfig deployWAR
+INFO: Deployment of web application archive /home/wsq/netManger/web-tomcat/webapps/NetManager.war has finished in 13,177 ms
+Sep 13, 2016 9:06:04 AM org.apache.coyote.AbstractProtocol start
+INFO: Starting ProtocolHandler ["http-bio-8092"]
+Sep 13, 2016 9:06:04 AM org.apache.coyote.AbstractProtocol start
+INFO: Starting ProtocolHandler ["ajp-bio-8009"]
+Sep 13, 2016 9:06:04 AM org.apache.catalina.startup.Catalina start
+INFO: Server startup in 13293 ms

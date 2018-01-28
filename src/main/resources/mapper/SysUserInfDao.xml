@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.wsq.net.manager.dao.SysUserInfDao">
+
+	<resultMap type="SysUserInf" id="userMap">
+	
+		<result 			property="id"   				column="ID"/>
+		<result 			property="sysUserName"   				column="SP_SYS_USER_NAME"/>
+		<result 			property="sysUserPwd"   				column="SP_SYS_USER_PWD"/>
+		<result 			property="sysCreateTime"   				column="SP_SYS_USER_CREATE_TIME"/>
+		<result 			property="sysLastTime"   				column="SP_SYS_USER_LAST_TIME"/>
+		<result 			property="sysLoginCount"   				column="SP_SYS_USER_LOGIN_COUNT"/>
+		
+	</resultMap>
+	
+	
+	
+	<select id="selectSysEntry" parameterType="java.util.Map" resultMap="userMap">
+		SELECT
+			*
+		FROM 
+		SP_SYS_USER_INF U
+		<where>
+			<if test="userName != null and userName != ''">
+				AND SP_SYS_USER_NAME =  #{userName}
+			</if>
+			<if test="userPwd  != null and userPwd != ''">
+				AND SP_SYS_USER_PWD =  #{userPwd}
+			</if>
+		
+		</where>
+	</select>
+	
+	<update id="updateSysUserLoginCount" parameterType="java.util.Map">
+		UPDATE
+			SP_SYS_USER_INF
+			<set>
+			<if test="sysLastTime != null and sysLastTime != ''">
+						SP_SYS_USER_LAST_TIME =  #{sysLastTime},
+				</if>
+				
+						SP_SYS_USER_LOGIN_COUNT =  SP_SYS_USER_LOGIN_COUNT+1,
+				
+			</set>
+			<where>
+				<if test="userName != null and userName != ''">
+				AND SP_SYS_USER_NAME =  #{userName}
+			</if>
+			<if test="userPwd  != null and userPwd != ''">
+				AND SP_SYS_USER_PWD =  #{userPwd}
+			</if>
+			</where>
+	</update>
+
+
+	
+</mapper>

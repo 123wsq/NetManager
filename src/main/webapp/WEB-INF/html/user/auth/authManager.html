@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="assets/css/ui.jqgrid.css" />
+
+<div class="search_panel">
+<form  onsubmit="return pageSearch(this);">
+	<div style="display: block;" class="widget-body ">
+		<div class="widget-main">
+			<div class="rowt">
+				<div class="col-sm-12">
+						
+						<div class="search_elm" style="margin-left: 0px">
+							<label class="label_search">菜单ID:</label>
+							<div class="search_input">
+								<input id="menuId" type="text" name='menuId'  placeholder="请输入菜单ID">
+							</div>
+						</div>
+						<div class="search_elm" style="margin-left: 0px">
+							<label class="label_search">菜单名称:</label>
+							<div class="search_input">
+								<input id="menuName" type="text" name='menuName'  placeholder="请输入菜单名称">
+							</div>
+						</div>
+						<div class="search_elm" style="margin-left: 0px">
+							<label class="label_search">父级菜单ID:</label>
+							<div class="search_input">
+								<input id="menuLevel" type="text" name='menuLevel'  placeholder="请输入父级菜单ID">
+							</div>
+						</div>
+						<div class="search_elm" style="margin-left: 0px">
+							<label class="label_search">菜单状态:</label>
+	                        <select 
+						        id="menuState" 
+						        name='menuState'
+						        data-placeholder="请选择状态" validate="true" style="width: 120px;vertical-align:middle;">
+						        <option value='' >--请选择--</option>
+						        <option value='0' >可用</option>
+						        <option value='1' >禁用</option>
+				            </select>
+						</div>
+						
+						<div class="search_elm">
+							<button class="btn btn-small btn_search btn-info" type="submit" title="搜索" onclick="searchCount();">
+								搜索
+							</button>
+							<button class="btn btn-small" onclick="resetForm();" type="reset" title="清空" >
+								清空
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div style="display: block;" class="widget-body " id="total">
+		
+	</div>
+</form>
+</div>
+
+
+

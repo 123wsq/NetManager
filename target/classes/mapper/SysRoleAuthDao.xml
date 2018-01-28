@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.wsq.net.manager.dao.SysRoleAuthDao">
+
+	<resultMap type="SysRoleAuthBean" id="sysRole">
+	
+		<result 			property="id"   						column="ID"/>
+		<result         property="role_id"							column = "ROLE_ID"/>
+		<result         property="role_name"							column = "ROLE_NAME"/>
+		<result         property="create_time"							column = "CREATE_TIME"/>
+		<result         property="update_time"							column = "UPDATE_TIME"/>
+		<result         property="role_state"							column = "ROLE_STATE"/>
+		
+	</resultMap>
+	
+	
+	
+	<select id="selectSysRoleEntry" parameterType="java.util.Map" resultMap="sysRole">
+		SELECT
+			*
+		FROM 
+		SP_ROLE_INFO
+		<where>
+			<if test="role_id != null and role_id !=''">
+				AND ROLE_ID = #{role_id}
+			</if>
+			<if test="role_name != null and role_name !=''">
+				AND ROLE_NAME = #{role_name}
+			</if>
+		
+		</where>
+		<if test="size !=null and size != '' and size !=0 ">
+			LIMIT #{start}, #{size}
+		</if>
+	</select>
+	
+	
+	
+	<insert id="addRole" parameterType="java.util.Map">
+	
+		INSERT
+		INTO
+		SP_ROLE_INFO
+		(
+			ROLE_ID,
+			ROLE_NAME,
+			CREATE_TIME,
+			UPDATE_TIME,
+			ROLE_STATE
+		)
+		VALUES
+		(
+			#{role_id},
+			#{role_name},
+			#{create_time},
+			#{update_time},
+			#{role_state}
+		)
+	</insert>
+
+	<delete id="removeRole" parameterType="java.util.Map">
+		DELETE
+		FROM
+		SP_ROLE_INFO
+		<where>
+
+			<if test="role_id != null and role_id !=''">
+				AND ROLE_ID = #{role_id}
+			</if>
+		</where>
+	</delete>
+
+	
+</mapper>
